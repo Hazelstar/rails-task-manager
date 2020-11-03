@@ -1,11 +1,14 @@
-<h1>Welcome to your Task Manager</h1>
+<h1>Your Task Manager</h1>
 
-<h3>Here are your tasks</h3>
+<h3>Welcome! Here are your tasks</h3>
 <p>Click on a task</p>
+
 <ul>
-  <%= @tasks.each do |task| %>
+  <% @tasks.each do |mytask| %>
     <li>
-      <% task.name %>
-     </li>
+      <%= link_to task_path(mytask.id) do %>
+      <%= mytask.name %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
