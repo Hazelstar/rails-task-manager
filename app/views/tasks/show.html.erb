@@ -1,5 +1,17 @@
 <h2>To Do</h2>
 
-<h4><%= @tasks.name %></h4>
-<span><%= @tasks.details %></span>
-<p>Completed? ➡️ <%= @tasks.completed %></p>
+<h4><%= @task.name %></h4>
+<span><%= @task.details %></span>
+<p>Completed? ➡️ <%= @task.completed %></p>
+
+<div class="button">
+  <h4><%= link_to '📝 Edit a task', task_edit_path(@task.id), method: :get %></h4>
+</div>
+
+<div class="button">
+  <h4><%= link_to 'Back to tasks list' , tasks_path, method: :get %></h4>
+</div>
+
+<!-- <div class="button">
+  <h4><%#= link_to '➖ Delete a task', task_path(@tasks.id), method: :delete %></h4>
+</div> -->

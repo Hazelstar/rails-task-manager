@@ -1,14 +1,19 @@
 <h1>Your Task Manager</h1>
 
 <h3>Welcome! Here are your tasks</h3>
-<p>Click on a task</p>
+<p>Click on a task to see more</p>
 
 <ul>
   <% @tasks.each do |mytask| %>
     <li>
       <%= link_to task_path(mytask.id) do %>
       <%= mytask.name %>
+      <%= link_to ' - 🗑', task_delete_path(mytask), method: :delete %>
       <% end %>
     </li>
   <% end %>
 </ul>
+
+<div class="button">
+  <h4><%= link_to '➕ Add a task', tasks_new_path, method: :get %></h4>
+</div>
