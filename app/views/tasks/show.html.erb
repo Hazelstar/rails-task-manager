@@ -5,7 +5,9 @@
 <p>Completed? ➡️ <%= @task.completed %></p>
 
 <div class="button">
-  <h4><%= link_to '📝 Edit a task', task_edit_path(@task.id), method: :get %></h4>
+  <h4><%= link_to '📝 Edit a task', task_edit_path(@task.id), method: :get %>
+    <%= flash[:notice] %>
+  </h4>
 </div>
 
 <div class="button">
